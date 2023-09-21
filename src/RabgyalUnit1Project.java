@@ -21,10 +21,21 @@ public class RabgyalUnit1Project {
         }
         total ++;
 
+
         double tipTotal = tipPercent * 0.01;
         tipTotal = total * tipTotal;
         tipTotal = Math.round(tipTotal*100.0)/100.0;
         double fullBill = total + tipTotal;
+
+        System.out.println("Will you use cash or card(cash or card): ");
+        System.out.println("If you use card you will get and additional 5% off before tip: ");
+        String paymentMethod = scan.nextLine();
+        if (paymentMethod.equals("card")) {
+            total=total-(total*0.1);
+            System.out.println("You have selected cash");
+        } else {
+            System.out.println("You have selected cash");
+        }
 
         double perPersonTip = tipTotal/numPeople;
         perPersonTip = Math.round(perPersonTip*100.0)/100.0;
